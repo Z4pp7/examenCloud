@@ -91,7 +91,7 @@ include'./Modelo.php';
                             echo "<td>" . $dato->getDescripcion() . "</td>";
                             echo "<td>" . $dato->getCantidad() . "</td>";
                             echo "<td>" . $dato->getPrecio() . "</td>";
-                            echo "<td>   <input type=\"hidden\" value=\"" . $dato->getCodigo() . "\" name=\"eliminar\">
+                            echo "<td>   <input type=\"hidden\" value=\"1\" name=\"eliminar\">
                                          <button type=\"submit\" >
                                             ELIMINAR
                                             </button></td>";
