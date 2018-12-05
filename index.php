@@ -18,7 +18,7 @@ include'./Modelo.php';
     <body>
 
 
-        <form action="./Controller.php" name="form">
+        <form action="Controller.php" name="form">
             <section class="datos">
                 <div>Codigo</div>
                 <input type="text" 
@@ -52,7 +52,7 @@ include'./Modelo.php';
 
 
 
-        <form action="./Controller.php" name="form">
+        <form action="Controller.php" name="form">
 
             <input type="hidden" value="cargar_lista" name="opcion">
             <button type="submit" >
@@ -85,8 +85,8 @@ if (isset($_SESSION['lista'])) {
         echo "<td>" . $dato->getDescripcion() . "</td>";
         echo "<td>" . $dato->getCantidad() . "</td>";
         echo "<td>" . $dato->getPrecio() . "</td>";
-        echo "<td>   <a href='examen-cloud.herokuapp.com/controller.php?opcion=eliminar&codigo=" . $dato->getCodigo() . "'</a>ELIMINAR</td>";
-        echo "<td><a href='examen-cloud.herokuapp.com/controller.php?opcion=cargar&codigo=" . $dato->getCodigo() . "'</a>ACTUALIZAR</td>";
+        echo "<td>   <a href='controller.php?opcion=eliminar&codigo=" . $dato->getCodigo() . "'</a>ELIMINAR</td>";
+        echo "<td><a href='controller.php?opcion=cargar&codigo=" . $dato->getCodigo() . "'</a>ACTUALIZAR</td>";
         echo "</tr>";
     }
 }
