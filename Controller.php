@@ -39,14 +39,11 @@ switch ($opcion) {
         break;
     case 'cargar':
         $codigo = $_REQUEST['codigo'];
-        if ($codigo != null) {
+    
             $cod = $producto->getProducto($codigo);
             $_SESSION['producto'] = serialize($cod);
             header('Location: ./actualizar.php');
-        } else {
-
-            header('Location: ./Examen.php');
-        }
+     
         break;
     case 'actualizar':
         $codigo = $_REQUEST['codigo'];

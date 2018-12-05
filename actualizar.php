@@ -19,7 +19,7 @@ include './Modelo.php';
     <body>
 
         <?php
-        $cod = unserialize($_SESSION['producto']);
+        $cod = unserialize($_SESSION['pro']);
         ?>
 
         <form action="./Controller.php" name="form">
@@ -28,7 +28,7 @@ include './Modelo.php';
                 <input type="text" 
                        name="codigo" 
                        placeholder="codigo"  
-                       value="<?php echo $cod->getCodigo(); ?>"
+                       value="<?php  echo $cod->getCodigo(); ?>"
                        enabled="true"
                        required/></br>
 
@@ -36,20 +36,20 @@ include './Modelo.php';
                 <input type="text" 
                        name="descripcion" 
                        placeholder="descripcion"  
-                         value="<?php echo $cod->getDescripcion(); ?>"
+                         value="<?php // echo $cod->getDescripcion(); ?>"
                        required/></br>
 
                 <div>Cantidad</div>
                 <input type="text" 
                        name="cantidad" 
                        placeholder="cantidad"  
-                         value="<?php echo $cod->getCantidad(); ?>"
+                         value="<?php // echo $cod->getCantidad(); ?>"
                        required/></br>
                 <div>Precio</div>
                 <input type="text" 
                        name="precio" 
                        placeholder="precio"  
-                         value="<?php echo $cod->getPrecio(); ?>"
+                         value="<?php // echo $cod->getPrecio(); ?>"
                        required/></br>
                 <input type="hidden" value="actualizar" name="opcion">
                 <button type="submit" >

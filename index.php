@@ -105,7 +105,7 @@ include'./Modelo.php';
                         echo"<td>   
                                 
 
-                        <form action=\"actualizar.php\" name=\"form\">
+                        <form action=\"actualizarC.php\" name=\"form\">
                             <input type=\"hidden\" value=\"".$dato->getCodigo(). "\" name=\"actualizar\">
                             <button type=\"submit\" >
                                 ACTUALIZAR
@@ -117,7 +117,7 @@ include'./Modelo.php';
             </tbody>
         </table>
 
-    </form>
+    
 
 
 </body>
