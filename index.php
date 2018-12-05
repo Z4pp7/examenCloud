@@ -95,7 +95,7 @@ include'./Modelo.php';
                                 
 
                         <form action=\"eliminar.php\" name=\"form\">
-                            <input type=\"hidden\" value=\"1\" name=\"eliminar\">
+                            <input type=\"hidden\" value=\"".$dato->getCodigo() ."\" name=\"eliminar\">
                             <button type=\"submit\" >
                                 ELIMINAR
                             </button> </form></td> ";
@@ -106,7 +106,7 @@ include'./Modelo.php';
                                 
 
                         <form action=\"actualizar.php\" name=\"form\">
-                            <input type=\"hidden\" value=\"1\" name=\"actualizar\">
+                            <input type=\"hidden\" value=\"".$dato->getCodigo(). "\" name=\"actualizar\">
                             <button type=\"submit\" >
                                 ACTUALIZAR
                             </button> </form></td> ";
