@@ -19,35 +19,35 @@ include'./Modelo.php';
 
 
         <form action="Controller.php" name="form">
-            <section class="datos">
-                <div>Codigo</div>
-                <input type="text" 
-                       name="codigo" 
-                       placeholder="codigo"  
-                       required/></br>
 
-                <div>Descripcion</div>
-                <input type="text" 
-                       name="descripcion" 
-                       placeholder="descripcion"  
-                       required/></br>
+            <div>Codigo</div>
+            <input type="text" 
+                   name="codigo" 
+                   placeholder="codigo"  
+                   required/></br>
 
-                <div>Cantidad</div>
-                <input type="text" 
-                       name="cantidad" 
-                       placeholder="cantidad"  
-                       required/></br>
-                <div>Precio</div>
-                <input type="text" 
-                       name="precio" 
-                       placeholder="precio"  
-                       required/></br>
-                <input type="hidden" value="guardar" name="opcion">
-                <button type="submit" >
-                    GUARDAR
-                </button>
+            <div>Descripcion</div>
+            <input type="text" 
+                   name="descripcion" 
+                   placeholder="descripcion"  
+                   required/></br>
 
-            </section>
+            <div>Cantidad</div>
+            <input type="text" 
+                   name="cantidad" 
+                   placeholder="cantidad"  
+                   required/></br>
+            <div>Precio</div>
+            <input type="text" 
+                   name="precio" 
+                   placeholder="precio"  
+                   required/></br>
+            <input type="hidden" value="guardar" name="opcion">
+            <button type="submit" >
+                GUARDAR
+            </button>
+
+
         </form>
 
 
@@ -58,44 +58,53 @@ include'./Modelo.php';
             <button type="submit" >
                 VER LISTADO
             </button>
-        </section>
-    </form>
 
-    <table > 
-        <thead>
-            <tr>
-                <th>CODIGO</th>
-                <th>DESCRIPCION</th>
-                <th>CANTIDAD</th>
-                <th>PRECIO</th>
-                <th>ELIMINAR</th>
-                <th>ACTUALIZAR</th>
-
-            </tr>
-        </thead>
-        <tbody>
-<?php
-if (isset($_SESSION['lista'])) {
-
-    $registro = unserialize($_SESSION['lista']);
-
-    foreach ($registro as $dato) {
-        echo "<tr>";
-        echo "<td>" . $dato->getCodigo() . "</td>";
-        echo "<td>" . $dato->getDescripcion() . "</td>";
-        echo "<td>" . $dato->getCantidad() . "</td>";
-        echo "<td>" . $dato->getPrecio() . "</td>";
-        echo "<td>   <a href='controller.php?opcion=eliminar&codigo=" . $dato->getCodigo() . "'</a>ELIMINAR</td>";
-        echo "<td><a href='controller.php?opcion=cargar&codigo=" . $dato->getCodigo() . "'</a>ACTUALIZAR</td>";
-        echo "</tr>";
-    }
-}
-?>
-        </tbody>
-    </table>
+        </form>
 
 
 
 
-</body>
+        <form action="eliminar.php" name="form">
+
+
+            <table > 
+                <thead>
+                    <tr>
+                        <th>CODIGO</th>
+                        <th>DESCRIPCION</th>
+                        <th>CANTIDAD</th>
+                        <th>PRECIO</th>
+                        <th>ELIMINAR</th>
+                        <th>ACTUALIZAR</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php
+                    if (isset($_SESSION['lista'])) {
+
+                        $registro = unserialize($_SESSION['lista']);
+
+                        foreach ($registro as $dato) {
+                            echo "<tr>";
+                            echo "<td>" . $dato->getCodigo() . "</td>";
+                            echo "<td>" . $dato->getDescripcion() . "</td>";
+                            echo "<td>" . $dato->getCantidad() . "</td>";
+                            echo "<td>" . $dato->getPrecio() . "</td>";
+                            echo "<td>   <input type=\"hidden\" value=\"" . $dato->getCodigo() . "\" name=\"eliminar\">
+                                         <button type=\"submit\" >
+                                            ELIMINAR
+                                            </button></td>";
+                            echo "<td><a href='controller.php?opcion=cargar&codigo=" . $dato->getCodigo() . "'</a>ACTUALIZAR</td>";
+                            echo "</tr>";
+                        }
+                    }
+                    ?>
+                </tbody>
+            </table>
+
+        </form>
+
+
+    </body>
 </html>
