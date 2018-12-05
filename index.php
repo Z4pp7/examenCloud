@@ -85,8 +85,8 @@ if (isset($_SESSION['lista'])) {
         echo "<td>" . $dato->getDescripcion() . "</td>";
         echo "<td>" . $dato->getCantidad() . "</td>";
         echo "<td>" . $dato->getPrecio() . "</td>";
-        echo "<td><a href='controller.php?opcion=eliminar&codigo=" . $dato->getCodigo() . "'</a>ELIMINAR</td>";
-        echo "<td><a href='controller.php?opcion=cargar&codigo=" . $dato->getCodigo() . "'</a>ACTUALIZAR</td>";
+        echo "<td>   <a href='examen-cloud.herokuapp.com/controller.php?opcion=eliminar&codigo=" . $dato->getCodigo() . "'</a>ELIMINAR</td>";
+        echo "<td><a href='examen-cloud.herokuapp.com/controller.php?opcion=cargar&codigo=" . $dato->getCodigo() . "'</a>ACTUALIZAR</td>";
         echo "</tr>";
     }
 }

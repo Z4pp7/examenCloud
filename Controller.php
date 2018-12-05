@@ -6,6 +6,8 @@ session_start();
 $producto = new Modelo();
 $opcion = $_REQUEST['opcion'];
 
+
+
 switch ($opcion) {
 
     case 'cargar_lista':
