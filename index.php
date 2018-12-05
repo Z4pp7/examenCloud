@@ -64,47 +64,61 @@ include'./Modelo.php';
 
 
 
-        <form action="eliminar.php" name="form">
 
 
-            <table > 
-                <thead>
-                    <tr>
-                        <th>CODIGO</th>
-                        <th>DESCRIPCION</th>
-                        <th>CANTIDAD</th>
-                        <th>PRECIO</th>
-                        <th>ELIMINAR</th>
-                        <th>ACTUALIZAR</th>
+        <table > 
+            <thead>
+                <tr>
+                    <th>CODIGO</th>
+                    <th>DESCRIPCION</th>
+                    <th>CANTIDAD</th>
+                    <th>PRECIO</th>
+                    <th>ELIMINAR</th>
+                    <th>ACTUALIZAR</th>
 
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php
-                    if (isset($_SESSION['lista'])) {
+                </tr>
+            </thead>
+            <tbody>
+                <?php
+                if (isset($_SESSION['lista'])) {
 
-                        $registro = unserialize($_SESSION['lista']);
+                    $registro = unserialize($_SESSION['lista']);
 
-                        foreach ($registro as $dato) {
-                            echo "<tr>";
-                            echo "<td>" . $dato->getCodigo() . "</td>";
-                            echo "<td>" . $dato->getDescripcion() . "</td>";
-                            echo "<td>" . $dato->getCantidad() . "</td>";
-                            echo "<td>" . $dato->getPrecio() . "</td>";
-                            echo "<td>   <input type=\"hidden\" value=\"1\" name=\"eliminar\">
-                                         <button type=\"submit\" >
-                                            ELIMINAR
-                                            </button></td>";
-                            echo "<td><a href='controller.php?opcion=cargar&codigo=" . $dato->getCodigo() . "'</a>ACTUALIZAR</td>";
-                            echo "</tr>";
-                        }
+                    foreach ($registro as $dato) {
+                        echo "<tr>";
+                        echo "<td>" . $dato->getCodigo() . "</td>";
+                        echo "<td>" . $dato->getDescripcion() . "</td>";
+                        echo "<td>" . $dato->getCantidad() . "</td>";
+                        echo "<td>" . $dato->getPrecio() . "</td>";
+
+                        echo "<td>   
+                                
+
+                        <form action=\"eliminar.php\" name=\"form\">
+                            <input type=\"hidden\" value=\"1\" name=\"eliminar\">
+                            <button type=\"submit\" >
+                                ELIMINAR
+                            </button> </form></td> ";
+
+
+
+                        echo"<td>   
+                                
+
+                        <form action=\"actualizar.php\" name=\"form\">
+                            <input type=\"hidden\" value=\"1\" name=\"actualizar\">
+                            <button type=\"submit\" >
+                                ACTUALIZAR
+                            </button> </form></td> ";
+                        echo "</tr>";
                     }
-                    ?>
-                </tbody>
-            </table>
+                }
+                ?>
+            </tbody>
+        </table>
 
-        </form>
+    </form>
 
 
-    </body>
+</body>
 </html>
