@@ -8,11 +8,11 @@
  */
 class Database {
 
-    private static $dbName = 'ejemplo';
-    private static $dbHost = 'localhost';
-    private static $port = '5433';
-    private static $dbUsername = 'postgres';
-    private static $dbUserPassword = 'zappy';
+    private static $dbName = 'd85cmdg7nf0or6';
+    private static $dbHost = 'ec2-54-227-249-201.compute-1.amazonaws.com';
+    private static $port = '5432';
+    private static $dbUsername = 'inmouglrdtgzxc';
+    private static $dbUserPassword = 'fdb5d4c103cd87f1f409573e2c3e1b5da59c93cf46cdf32e53980ebe1fe2753a';
     private static $conexion=null;
 //    
 
