@@ -15,6 +15,7 @@ include'./Modelo.php';
         <meta charset="UTF-8">
         <title></title>
           <link rel="stylesheet" type="text/css" href="css/fontawesome-all.css">
+            <link rel="stylesheet" type="text/css" href="css/examen.css">
       
     </head>
     <body>
@@ -22,29 +23,35 @@ include'./Modelo.php';
 
         <form action="Controller.php" name="form">
 
+            <section class="datos">
             <div>Codigo</div>
                  <i class="fas fa-user-tie" aria-hidden="true"></i>
             <input type="text" 
                    name="codigo" 
+                   class="codigo"
                    placeholder="codigo"  
                    required/></br>
 
             <div>Descripcion</div>
             <input type="text" 
                    name="descripcion" 
+                   class="codigo"
                    placeholder="descripcion"  
                    required/></br>
 
             <div>Cantidad</div>
             <input type="text" 
                    name="cantidad" 
+                   class="codigo"
                    placeholder="cantidad"  
                    required/></br>
             <div>Precio</div>
             <input type="text" 
                    name="precio" 
+                   class="codigo"
                    placeholder="precio"  
                    required/></br>
+            </section>
             <input type="hidden" value="guardar" name="opcion">
             <button type="submit" >
                 GUARDAR
