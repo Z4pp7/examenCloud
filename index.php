@@ -13,7 +13,7 @@ include'./Modelo.php';
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>PRODUCTOS</title>
+        <title>Productos</title>
               <script src="css/jquery-2.1.4.js"></script>
              <script src="css/bootstrap-table.js"></script>
             <link href="css/bootstrap-table.css" rel="stylesheet">
