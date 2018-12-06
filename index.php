@@ -14,6 +14,8 @@ include'./Modelo.php';
     <head>
         <meta charset="UTF-8">
         <title></title>
+          <link rel="stylesheet" type="text/css" href="css/fontawesome-all.css">
+      
     </head>
     <body>
 
@@ -21,6 +23,7 @@ include'./Modelo.php';
         <form action="Controller.php" name="form">
 
             <div>Codigo</div>
+                 <i class="fas fa-user-tie" aria-hidden="true"></i>
             <input type="text" 
                    name="codigo" 
                    placeholder="codigo"  
