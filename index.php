@@ -13,10 +13,15 @@ include'./Modelo.php';
 <html>
     <head>
         <meta charset="UTF-8">
-        <title></title>
-          <link rel="stylesheet" type="text/css" href="css/fontawesome-all.css">
-            <link rel="stylesheet" type="text/css" href="css/examen.css">
-      
+        <title>PRODUCTOS</title>
+              <script src="css/jquery-2.1.4.js"></script>
+             <script src="css/bootstrap-table.js"></script>
+            <link href="css/bootstrap-table.css" rel="stylesheet">
+            
+        <link rel="stylesheet" type="text/css" href="css/fontawesome-all.css">
+        <link rel="stylesheet" type="text/css" href="css/examen.css">
+    
+
     </head>
     <body>
 
@@ -24,59 +29,62 @@ include'./Modelo.php';
         <form action="Controller.php" name="form">
 
             <section class="datos">
-            <div>Codigo</div>
-                 <i class="fas fa-user-tie" aria-hidden="true"></i>
-            <input type="text" 
-                   name="codigo" 
-                   class="codigo"
-                   placeholder="codigo"  
-                   required/></br>
+                <div>Código</div>
+                <i class="ico fas fa-barcode" aria-hidden="true"></i>
+                <input type="text" 
+                       name="codigo" 
+                       class="codigo"
+                       placeholder="Código"  
+                       required/></br>
 
-            <div>Descripcion</div>
-            <input type="text" 
-                   name="descripcion" 
-                   class="codigo"
-                   placeholder="descripcion"  
-                   required/></br>
+                <div>DescripciÓn</div>
+                <i class="ico fas fa-tag" aria-hidden="true"></i>
+                <input type="text" 
+                       name="descripcion" 
+                       class="codigo"
+                       placeholder="Descripción"  
+                       required/></br>
 
-            <div>Cantidad</div>
-            <input type="text" 
-                   name="cantidad" 
-                   class="codigo"
-                   placeholder="cantidad"  
-                   required/></br>
-            <div>Precio</div>
-            <input type="text" 
-                   name="precio" 
-                   class="codigo"
-                   placeholder="precio"  
-                   required/></br>
-            </section>
-            <input type="hidden" value="guardar" name="opcion">
-            <button type="submit" >
-                GUARDAR
-            </button>
+                <div>Cantidad</div>
+                <i class="ico_c fas fa-boxes" aria-hidden="true"></i>
+                <input type="text" 
+                       name="cantidad" 
+                       class="codigo"
+                       placeholder="Cantidad"  
+                       required/></br>
+                <div>Precio</div>
+                <i class="ico_p fas fa-dollar-sign" aria-hidden="true"></i>
+                <input type="text" 
+                       name="precio" 
+                       class="codigo"
+                       placeholder="Precio"  
+                       required/></br>
+
+                <input type="hidden" value="guardar" name="opcion">
+                <button type="submit" class="button">
+                    <i class="ico_guardar far fa-save" aria-hidden="true"></i>
+                </button>
 
 
         </form>
-
 
 
         <form action="Controller.php" name="form">
 
             <input type="hidden" value="cargar_lista" name="opcion">
-            <button type="submit" >
-                VER LISTADO
+            <button type="submit" class="button">
+                <i class="ico_guardar far fa-file-archive" aria-hidden="true"></i>
             </button>
 
         </form>
 
 
+    </section>
 
 
 
-
-        <table > 
+    <section class="datosTabla">
+        <table class="display" data-toggle="table"> 
             <thead>
                 <tr>
                     <th>CODIGO</th>
@@ -105,9 +113,9 @@ include'./Modelo.php';
                                 
 
                         <form action=\"eliminar.php\" name=\"form\">
-                            <input type=\"hidden\" value=\"".$dato->getCodigo() ."\" name=\"eliminar\">
-                            <button type=\"submit\" >
-                                ELIMINAR
+                            <input type=\"hidden\" value=\"" . $dato->getCodigo() . "\" name=\"eliminar\">
+                            <button type=\"submit\" class=\"button_tbl\" >
+                                  <i class=\"ico_borrar fas fa-trash\" aria-hidden=\"true\"></i>
                             </button> </form></td> ";
 
 
@@ -116,9 +124,9 @@ include'./Modelo.php';
                                 
 
                         <form action=\"actualizarC.php\" name=\"form\">
-                            <input type=\"hidden\" value=\"".$dato->getCodigo(). "\" name=\"actualizar\">
-                            <button type=\"submit\" >
-                                ACTUALIZAR
+                            <input type=\"hidden\" value=\"" . $dato->getCodigo() . "\" name=\"actualizar\">
+                            <button type=\"submit\" class=\"button_tbl\">
+                                <i class=\"ico_actualizar fas fa-pencil-alt\" aria-hidden=\"true\"></i>
                             </button> </form></td> ";
                         echo "</tr>";
                     }
@@ -127,7 +135,7 @@ include'./Modelo.php';
             </tbody>
         </table>
 
-    
+    </section>
 
 
 </body>
